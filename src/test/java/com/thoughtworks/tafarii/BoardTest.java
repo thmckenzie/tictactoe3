@@ -67,6 +67,8 @@ public class BoardTest {
 
     @Test
     public void whenLocationIsTakenShouldReturnFalse() throws Exception {
+        //arrange: hardcoded 5 to be taken
+
         //action
         board.isTaken("5");
 
