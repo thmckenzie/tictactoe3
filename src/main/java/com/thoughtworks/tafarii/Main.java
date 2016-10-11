@@ -4,13 +4,30 @@ package com.thoughtworks.tafarii;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.PrintStream;
+import java.util.ArrayList;
 
 public class Main {
 
     public static void main(String[] args) {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         PrintStream printStream = new PrintStream(System.out);
-        String[] boardContents = {"1", "|", "2", "|", "3\n", "4", "|", "5", "|", "6\n", "7", "|", "8", "|", "9\n"};
+        ArrayList<String> boardContents = new ArrayList<String>();
+        boardContents.add("1");
+        boardContents.add("|");
+        boardContents.add("2");
+        boardContents.add("|");
+        boardContents.add("3\n");
+        boardContents.add("4");
+        boardContents.add("|");
+        boardContents.add("X");
+        boardContents.add("|");
+        boardContents.add("6\n");
+        boardContents.add("7");
+        boardContents.add("|");
+        boardContents.add("8");
+        boardContents.add("|");
+        boardContents.add("9\n");
+
 
         Board board = new Board(printStream, boardContents);
 
