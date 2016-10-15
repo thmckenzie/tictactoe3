@@ -50,4 +50,15 @@ public class GameTest {
         //assert
         verify(secondPlayer).makeMove();
     }
+
+    @Test
+    public void shouldAlternatePlayersWhenTakingTurns() throws Exception {
+        //action
+        game.takeTurns(firstPlayer, secondPlayer);
+
+        //assert
+        verify(firstPlayer).makeMove();
+        verify(secondPlayer).makeMove();
+    }
+
 }

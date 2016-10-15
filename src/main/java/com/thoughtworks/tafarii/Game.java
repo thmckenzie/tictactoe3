@@ -14,7 +14,19 @@ public class Game {
 
     public void start() {
         board.drawBoard();
-        firstPlayer.makeMove();
-        secondPlayer.makeMove();
+
+        takeTurns(firstPlayer, secondPlayer);
+        //firstPlayer.makeMove();
+        //secondPlayer.makeMove();
+    }
+
+    public void takeTurns(Player firstPlayer, Player secondPlayer) {
+        this.firstPlayer = firstPlayer;
+        this.secondPlayer = secondPlayer;
+
+        while(true){
+            firstPlayer.makeMove();
+            secondPlayer.makeMove();
+        }
     }
 }
