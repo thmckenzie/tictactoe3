@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 public class BoardTest {
 
@@ -46,7 +47,7 @@ public class BoardTest {
 
         //assert
         verify(printStream).print(  "1|2|3\n" +
-                                    "4|5|6\n" +
+                                    "4|X|6\n" +
                                     "7|8|9\n");
     }
 
@@ -60,7 +61,7 @@ public class BoardTest {
 
         //assert
         verify(printStream).print(  "X|2|3\n" +
-                                    "4|5|6\n" +
+                                    "4|X|6\n" +
                                     "7|8|9\n");
 
     }
@@ -75,4 +76,14 @@ public class BoardTest {
         //assert
         assertTrue(board.isTaken("5"));
     }
+
+    @Test
+    public void shouldPrintLocationTakenMessageWhenLocationIsTaken() throws Exception {
+        //action
+        board.isTaken("5");
+
+        //assert
+        verify(printStream).println("Location 5 is already taken");
+    }
+
 }

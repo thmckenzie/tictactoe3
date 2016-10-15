@@ -21,19 +21,25 @@ public class Board {
 
     public void placeMark(String symbol, String location) {
         for (int i = 0; i < board.size(); i++) {
-            if (board.get(i).equals(location) || board.get(i).equals(location + "\n")) {
+            if (board.get(i).equals(location)) {
                 board.set(i, symbol);
+            }
+            if(board.get(i).equals(location + "\n")){
+                board.set(i, symbol+"\n");
             }
         }
     }
 
 
+
+
     public boolean isTaken(String location) {
         Boolean isTaken;
 
-        if(board.contains(location)){
+        if(board.contains(location) || board.contains(location + "\n")){
             isTaken = false;
         }else{
+            printStream.println("Location " + location + " is already taken");
             isTaken = true;
         }
         return isTaken;

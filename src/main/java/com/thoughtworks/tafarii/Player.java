@@ -30,7 +30,12 @@ public class Player {
         }
 
         Boolean isTaken = board.isTaken(location);
-        board.placeMark(symbol, location);
-        board.drawBoard();
+        if (isTaken) {
+            board.drawBoard();
+            makeMove();
+        }else{
+            board.placeMark(symbol, location);
+            board.drawBoard();
+        }
     }
 }
