@@ -1,5 +1,6 @@
 package com.thoughtworks.tafarii;
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -84,6 +85,32 @@ public class BoardTest {
 
         //assert
         verify(printStream).println("Location 5 is already taken");
+    }
+
+    @Test
+    public void shouldReturnTrueWhenBoardIsFull() throws Exception {
+        //arrange
+        ArrayList<String> fullBoardContents = new ArrayList<String>();
+        fullBoardContents.add("X");
+        fullBoardContents.add("|");
+        fullBoardContents.add("X");
+        fullBoardContents.add("|");
+        fullBoardContents.add("X\n");
+        fullBoardContents.add("X");
+        fullBoardContents.add("|");
+        fullBoardContents.add("X");
+        fullBoardContents.add("|");
+        fullBoardContents.add("X\n");
+        fullBoardContents.add("X");
+        fullBoardContents.add("|");
+        fullBoardContents.add("X");
+        fullBoardContents.add("|");
+        fullBoardContents.add("X\n");
+
+        Board fullBoard = new Board(printStream, fullBoardContents);
+
+        //assert
+        Assert.assertTrue(fullBoard.isFull());
     }
 
 }

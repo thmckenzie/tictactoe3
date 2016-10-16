@@ -34,7 +34,7 @@ public class Main {
         Player firstPlayer = new Player(bufferedReader, printStream, board, "X");
         Player secondPlayer = new Player(bufferedReader, printStream, board, "O");
 
-        Game game = new Game(board, firstPlayer, secondPlayer);
+        Game game = new Game(board, firstPlayer, secondPlayer, printStream);
 
         game.start();
     }

@@ -30,9 +30,6 @@ public class Board {
         }
     }
 
-
-
-
     public boolean isTaken(String location) {
         Boolean isTaken;
 
@@ -43,5 +40,15 @@ public class Board {
             isTaken = true;
         }
         return isTaken;
+    }
+
+    public boolean isFull() {
+        boolean isFull = true;
+        for(int i =1; i < 10; i++){
+            if(board.contains(i) || board.contains(i + "\n")){
+                isFull = false;
+            }
+        }
+        return isFull;
     }
 }

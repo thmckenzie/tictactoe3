@@ -30,6 +30,11 @@ public class Player {
         }
 
         Boolean isTaken = board.isTaken(location);
+
+        decideIfValidMove(location, isTaken);
+    }
+
+    private void decideIfValidMove(String location, Boolean isTaken) {
         if (isTaken) {
             board.drawBoard();
             makeMove();
